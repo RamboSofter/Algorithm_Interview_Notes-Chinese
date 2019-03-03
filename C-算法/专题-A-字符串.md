@@ -274,7 +274,7 @@ string infix2suffix(const string& s) {
                 tmp.push(c);                                         // 则将该运算符入栈
             }
             else {
-                while (!tmp.empty() && get_level(tmp.top()) >= get_level(c)) {  // 如果栈顶元素的优先级大于等于当前运算符，则弹出
+                while (!tmp.empty() && get_level(tmp.top()) >= get_level(c)) {// 如果栈顶元素的优先级大于等于当前运算符，则弹出
                     if (tmp.top() == '(')  // （坑点 3：左括号的优先级是大于普通运算符的，但它不应该在这里弹出）
                         break;
                     ans.push(string(1, tmp.top()));
